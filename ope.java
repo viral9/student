@@ -11,7 +11,7 @@ public class ope
 	public static void main(String args[])
 	{
 		Scanner st = new Scanner(System.in);
-		int i,choice;
+		int i,choice,sc=0,scr=0;
 
 		student s[] = new student[10];
 		do
@@ -21,8 +21,8 @@ public class ope
 			if(choice == 1)
 			{
 				System.out.println("enter how many number of class");
-				int sc = st.nextInt();
-				for(i=0;i<sc;i++)
+				scr = st.nextInt();
+				for(i=0;i<scr;i++)
 				{
 					s[i] = new student();
 				}
@@ -30,7 +30,7 @@ public class ope
 			else if(choice == 2)
 			{
 				System.out.println("enter number of class");
-				int sc = st.nextInt();
+				sc = st.nextInt();
 				System.out.println("enter how many number of student");
 				int ss = st.nextInt();
 				for(i=0;i<ss;i++)
@@ -47,7 +47,7 @@ public class ope
 			else if(choice == 3)
 			{
 				System.out.println("enter number of class");
-				int sc = st.nextInt();
+				sc = st.nextInt();
 				int num;
 				
 				num = s[sc].roll.length;
@@ -79,7 +79,6 @@ public class ope
 				else if(choice == 2)
 				{
 					System.out.println("enter name for search :");
-					
 					sname = scaname.nextLine();	
 				}
 				
@@ -99,6 +98,41 @@ public class ope
 					}
 				}
 				 
+			}
+			else if(choice==5)
+			{
+				int h;
+				for(i=0;i<scr;i++)
+				{
+					if(s[i].roll[0]!=0)
+					{
+					System.out.println("class num"+i);
+					int num = s[i].roll.length;
+					System.out.println("length of student"+num);
+					
+					for(h=0;h<num;h++)
+					{
+						if(s[i].roll[h]!=0)
+						{
+							System.out.println("rollno :"+s[i].roll[h]);
+							System.out.println("rollno :"+s[i].name[h]);
+						}	
+					}
+					}
+					
+				}	
+			}
+			else if(choice==6)
+			{
+				int a,b;
+				for(a=0;a<10;a++)
+				{
+					for(b=0;b<10;b++)
+					{
+						System.out.println("rollno :"+s[a].roll[b]);
+						System.out.println("rollno :"+s[a].name[b]);	
+					}
+				}
 			}
 			
 			/*for(i=0;i<sc;i++)
