@@ -16,7 +16,7 @@ public class ope
 		student s[] = new student[10];
 		do
 		{
-			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch by name ");
+			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch\n5 for serch rollno ");
 			choice = st.nextInt();
 			if(choice == 1)
 			{
@@ -64,11 +64,26 @@ public class ope
 			}
 			else if(choice == 4)
 			{
+				Scanner scaname = new Scanner(System.in);
+				String sname = " ";
+				int secnum = 0;
 				System.out.println("enter class number :");
 				int cnum = st.nextInt();
-				System.out.println("enter name for search :");
-				Scanner scaname = new Scanner(System.in);
-				String sname = scaname.nextLine();
+				System.out.println("1 for rollno\n2 for number");
+				choice = st.nextInt();
+				if(choice == 1)
+				{
+					System.out.println("enter student number :");
+					secnum = st.nextInt();	
+				}
+				else if(choice == 2)
+				{
+					System.out.println("enter name for search :");
+					
+					sname = scaname.nextLine();	
+				}
+				
+				
 				//s[cnum] = new student();
 				int num = s[cnum].roll.length;
 				//System.out.println(s[cnum].name[2]);
@@ -76,8 +91,9 @@ public class ope
 				{
 					if(s[cnum].roll[i]!=0)
 					{
-						if(s[cnum].name[i].equals(sname))
+						if(s[cnum].name[i].equals(sname) || s[cnum].roll[i] == secnum )
 						{
+							System.out.println(s[cnum].roll[i]);
 							System.out.println(s[cnum].name[i]);
 						}
 					}
