@@ -5,9 +5,7 @@ class student
 	String[] name = new String[10];
 }
 public class ope
-{
-	
-		
+{	
 	public static void main(String args[])
 	{
 		Scanner st = new Scanner(System.in);
@@ -16,7 +14,7 @@ public class ope
 		student s[] = new student[10];
 		do
 		{
-			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch\n5 for serch rollno ");
+			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch\n5 for search class\n6 for char search");
 			choice = st.nextInt();
 			if(choice == 1)
 			{
@@ -123,6 +121,36 @@ public class ope
 				}	
 			}
 			else if(choice==6)
+			{
+				int h;
+				Scanner senca = new Scanner(System.in);
+				String senca1;
+				System.out.println("enter name char");
+				senca1 = senca.nextLine();
+				for(i=0;i<scr;i++)
+				{
+					if(s[i].roll[0]!=0)
+					{
+					System.out.println("class num"+i);
+					int num = s[i].roll.length;
+					System.out.println("length of student"+num);
+					
+					for(h=0;h<num;h++)
+					{
+						if(s[i].roll[h]!=0)
+						{
+							if(s[i].name[h].contains(senca1))
+							{
+								System.out.println("rollno :"+s[i].roll[h]);
+								System.out.println("rollno :"+s[i].name[h]);
+							}
+						}	
+					}
+					}
+					
+				}	
+			}
+			else if(choice==7)
 			{
 				int a,b;
 				for(a=0;a<10;a++)
