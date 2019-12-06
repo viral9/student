@@ -132,7 +132,8 @@ public class ope
 				//System.out.println(s[cnum].name[2]);
 				for(i=0;i<num;i++)
 				{
-					if(s[cnum].roll[i]!=0)
+					//if(s[cnum].roll[i]!=0)
+					if(s[cnum].cname != null)
 					{
 						if(s[cnum].name[i].equals(sname) || s[cnum].roll[i] == secnum )
 						{
