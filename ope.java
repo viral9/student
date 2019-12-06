@@ -4,6 +4,20 @@ class student
 	int[] roll = new int[10];
 	String[] name = new String[10];
 	String cname;
+	/*void printclass()
+	{
+		int i,scr=0;
+		System.out.println("list of class");
+		scr = roll.length;
+		for(i=0;i<scr;i++)
+		{
+			if(roll[0]!=0)
+			{
+				System.out.println("class number : "+i);
+				System.out.println(cname);
+			}
+		}
+	}*/
 }
 public class ope
 {	
@@ -11,11 +25,12 @@ public class ope
 	{
 		Scanner st = new Scanner(System.in);
 		int i,choice,sc=0,scr=0;
+		student obj = new student();
 
 		student s[] = new student[10];
 		do
 		{
-			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch\n5 for class print\n6 for char search\n7 for delete class");
+			System.out.println("1 for class \n2 for student data\n3 for print\n4 for serch\n5 for class print\n6 for char search\n7 for delete class\n8 for delete student");
 			choice = st.nextInt();
 			if(choice == 1)
 			{
@@ -68,7 +83,8 @@ public class ope
 				{
 					System.out.println("enter number of class");
 					sc = st.nextInt();
-				if(s[sc].roll[0]!=0)
+				if(s[sc].cname != null)
+					
 				{
 				num = s[sc].roll.length;
 				System.out.println("class name :"+s[sc].cname);
@@ -132,7 +148,8 @@ public class ope
 				int h;
 				for(i=0;i<scr;i++)
 				{
-					if(s[i].roll[0]!=0)
+					//if(s[i].roll[0]!=0)
+					if(s[i].cname != null)
 					{
 					System.out.println("class num"+i);
 					int num = s[i].roll.length;
@@ -159,7 +176,8 @@ public class ope
 				senca1 = senca.nextLine();
 				for(i=0;i<scr;i++)
 				{
-					if(s[i].roll[0]!=0)
+					//if(s[i].roll[0]!=0)
+					if(s[i].cname != null)
 					{
 					System.out.println("class num"+i);
 					int num = s[i].roll.length;
@@ -183,6 +201,9 @@ public class ope
 			else if(choice==7)
 			{
 				int opop;
+				
+				//obj.printclass();
+				
 				System.out.println("list of class");
 				for(i=0;i<scr;i++)
 				{
@@ -192,6 +213,7 @@ public class ope
 						System.out.println(s[i].cname);
 					}
 				}
+				
 				do
 				{
 					
@@ -215,6 +237,75 @@ public class ope
 					System.out.println("enter 1 for continue :");
 					opop = st.nextInt();
 				}while(opop==1);
+			}
+			else if(choice==8)
+			{
+				int opop;
+				
+				//obj.printclass();
+			
+				System.out.println("list of class");
+				for(i=0;i<scr;i++)
+				{
+					if(s[i].roll[0]!=0)
+					{
+						System.out.println("class number : "+i);
+						System.out.println(s[i].cname);
+					}
+				}
+				
+				int num,newch,delclnum,delroll;
+				do
+				{
+					System.out.println("enter number of class");
+					sc = st.nextInt();
+					delclnum = sc;
+				if(s[sc].roll[0]!=0)
+				{
+				num = s[sc].roll.length;
+				System.out.println("class name :"+s[sc].cname);
+				for(i=0;i<num;i++)
+				{
+					if(s[sc].roll[i]!=0)
+					{
+					System.out.println("student rollno"+s[sc].roll[i]);
+					System.out.println("enter student name"+s[sc].name[i]);
+					}
+				}
+				}
+				else if(s[sc].roll[0]==0)
+				{
+					System.out.println("wrong choice");
+				}
+					System.out.println("enter rollno to delete :");
+					delroll = st.nextInt();
+					if(s[sc].roll[0]==0)
+					{
+					System.out.println("11 for continue");
+					newch = st.nextInt();
+					}
+					else
+					{
+						newch = 55;	
+					}
+				}while(newch==11);
+				int rl;
+				System.out.println("class num"+delclnum+"rollno"+delroll);
+				rl = s[delclnum].roll.length;
+				//delroll = delroll -1;
+				//s[delclnum].roll[delroll] = 0;
+				//s[delclnum].name[delroll] =" ";
+				for(i=0;i<rl;i++)
+				{
+					if(delroll==s[delclnum].roll[i])
+					{
+						System.out.println(s[delclnum].roll[i]);
+						s[delclnum].roll[i] = 0;
+						System.out.println(s[delclnum].name[i]);
+						s[delclnum].name[i] = " ";
+					}
+				} 
+				
 			}
 			/*else if(choice==7)
 			{
